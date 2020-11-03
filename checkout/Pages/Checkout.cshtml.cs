@@ -31,7 +31,7 @@ namespace SportsClub.Checkout.Pages
 
     }
 
-    public IActionResult OnPost(string eventName, int quantity, string email, string amount)
+    public IActionResult OnPost(string eventName, int quantity, string email, double amount)
     {
       ICheckoutApi checkoutApi = client.CheckoutApi;
       try
@@ -42,7 +42,7 @@ namespace SportsClub.Checkout.Pages
         List<OrderLineItem> lineItems = new List<OrderLineItem>();
 
         Money firstLineItemBasePriceMoney = new Money.Builder()
-          .Amount(System.Convert.ToInt64(amount))
+          .Amount(System.Convert.ToInt64(amount*100))
           .Currency("USD")
           .Build();
 
