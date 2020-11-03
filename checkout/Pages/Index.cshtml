@@ -1,0 +1,47 @@
+﻿@page
+@model SportsClub.Checkout.IndexModel
+@{
+    ViewData["Title"] = "Check Out";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/normalize.css" />
+    <link rel="stylesheet" href="~/css/sqaure.css" />
+    <link rel="stylesheet" href="~/css/checkout.css" />
+}
+
+<header class="container">
+    <div id="square-logo"></div>
+    <h1 class="header">Event Checkout</h1>
+</header>
+    <form class="container" method="post" action="Checkout">
+        <h2 class="checkout-header padding-vertical-medium">Order Information</h2>
+            <div class="checkout-form">
+                <div class="input-row">
+                    <div class="input-row__label">@Model.eventName</div>
+                    <input type=hidden value="@Model.eventName" name="eventName">
+                </div>
+                <div class="input-row">
+                    <div class="input-row__label">Price</div>
+                    <div class="input-row__label id="amount">$@Model.amount</div>
+                    <input type=hidden value="@Model.amount" name="amount">
+                </div>
+                <div class="input-row">
+                    <div class="input-row__label">Quantity</div>
+                        <div class="input-container">
+                            <input type="number" class="input-row__input" name="quantity" min="1" required="" value="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <h2 class="checkout-header padding-vertical-medium">Login Information</h2>
+            <div class="input-row">
+                <div class="input-row__label">Email</div>
+                <div class="input-container">
+                    <input type="email" class="input-row__input" name="email" placeholder="jane.doe@example.com" required="">
+                </div>
+            </div>
+            <div class="button-container padding-vertical-small">
+          <input type="submit" value="Checkout" class="button button--primary button--block">
+        </div>
+    </form>
+</div>
