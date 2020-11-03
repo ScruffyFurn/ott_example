@@ -17,16 +17,16 @@ namespace SportsClub.Checkout.Pages
     public CheckoutModel( Microsoft.Extensions.Configuration.IConfiguration configuration)
     {
       // Get environment
-      Square.Environment environment = configuration["AppSettings:Environment"] == "sandbox" ?
+      Square.Environment environment = configuration["Environment"] == "sandbox" ?
         Square.Environment.Sandbox : Square.Environment.Production;
 
       // Build base client
       client = new SquareClient.Builder()
         .Environment(environment)
-        .AccessToken(configuration["AppSettings:AccessToken"])
+        .AccessToken(configuration["AccessToken"])
         .Build();
 
-      locationId = configuration["AppSettings:LocationId"];
+      locationId = configuration["LocationId"];
 
 
     }
