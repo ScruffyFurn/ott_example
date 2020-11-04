@@ -10,7 +10,6 @@ namespace SportsClub.Checkout.Pages
   {
         public void OnGet(string checkoutId, string transactionId)
         {
-          string a = "";
         }
 
   }
