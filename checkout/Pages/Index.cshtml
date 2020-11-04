@@ -16,22 +16,25 @@
     <form class="container" method="post" action="Checkout">
         <h2 class="checkout-header padding-vertical-medium">Order Information</h2>
             <div class="checkout-form">
+                @foreach (var item in @Model.events)
+                {
                 <div class="input-row">
-                    <div class="input-row__label">@Model.eventName</div>
-                    <input type=hidden value="@Model.eventName" name="eventName">
+                    <div class="input-row__label">Event</div>
+                    <div class="input-row__label">@item.ItemData.Name</div>
+                    <input type=hidden value="@item.ItemData.Name" name="eventName">
                 </div>
                 <div class="input-row">
                     <div class="input-row__label">Price</div>
-                    <div class="input-row__label id="amount">$@Model.amount</div>
-                    <input type=hidden value="@Model.amount" name="amount">
+                    <div class="input-row__label">$@(@item.ItemData.Variations[0].ItemVariationData.PriceMoney.Amount / 100)</div>
+                    <input type=hidden value="@item.ItemData.Variations[0].ItemVariationData.PriceMoney.Amount" name="amount">
                 </div>
                 <div class="input-row">
                     <div class="input-row__label">Quantity</div>
                         <div class="input-container">
                             <input type="number" class="input-row__input" name="quantity" min="1" required="" value="1">
                         </div>
-                    </div>
                 </div>
+                }
             </div>
         <h2 class="checkout-header padding-vertical-medium">Login Information</h2>
             <div class="input-row">

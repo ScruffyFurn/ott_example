@@ -1,0 +1,43 @@
+﻿@page
+@model SportsClub.Checkout.Pages.VideoPlayerModel
+@{
+}
+
+<head>
+  <meta charset="utf-8">
+  <title>Sega 60 Special</title>
+    <link href="//vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/7.8.2/video.min.js"></script>
+
+    <!-- the libraries below are optional, if you want to have quality selector for the end user. -->
+    <script src="https://unpkg.com/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script src="https://unpkg.com/videojs-hls-quality-selector@1.0.5/dist/videojs-hls-quality-selector.min.js"></script>
+	 <style>
+         body {
+            background-image: url("checkered.png");
+            text-align: center;
+         }
+    </style>
+
+</head>
+
+<body>
+<br>
+<br>
+<video-js width="1280" height="720"
+style="display:block; margin: 0 auto;"
+id="my-video" class="video-js vjs-big-play-centered" controls preload="metadata"
+          poster="https://i.pinimg.com/originals/d8/90/31/d89031ea6957dea66ce48dc4e658a022.jpg"
+          data-setup='{}'>
+    <source src="http://scruffyfurn.com/tv/dynamic.m3u"" type='application/x-mpegURL'>
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video-js>
+<script>
+    // only needed, when you want the quality selector. Otherwise you can skip the whole script block
+    var player = videojs('my-video');
+    player.hlsQualitySelector();
+</script>
+</body>

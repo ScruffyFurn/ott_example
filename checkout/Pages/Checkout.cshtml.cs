@@ -27,8 +27,6 @@ namespace SportsClub.Checkout.Pages
         .Build();
 
       locationId = configuration["LocationId"];
-
-
     }
 
     public IActionResult OnPost(string eventName, int quantity, string email, double amount)
@@ -42,7 +40,7 @@ namespace SportsClub.Checkout.Pages
         List<OrderLineItem> lineItems = new List<OrderLineItem>();
 
         Money firstLineItemBasePriceMoney = new Money.Builder()
-          .Amount(System.Convert.ToInt64(amount*100))
+          .Amount(System.Convert.ToInt64(amount))
           .Currency("USD")
           .Build();
 
@@ -63,12 +61,14 @@ namespace SportsClub.Checkout.Pages
           .Order(order)
           .Build();
 
+          string path = string.Format("http://{0}/videoplayer", HttpContext.Request.Host.Value);
+
         // create checkout request with the previously created order
         CreateCheckoutRequest createCheckoutRequest = new CreateCheckoutRequest.Builder(
             Guid.NewGuid().ToString(),
             orderRequest)
           .PrePopulateBuyerEmail(email)
-          .RedirectUrl("http://52.229.94.77")
+          .RedirectUrl(path)
           .Build();
     
 

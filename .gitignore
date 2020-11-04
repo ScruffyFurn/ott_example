@@ -1,2 +1,3 @@
 */.vscode/*
 checkout/appsettings.json
+checkout/node_modules/*
