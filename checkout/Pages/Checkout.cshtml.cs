@@ -61,7 +61,7 @@ namespace SportsClub.Checkout.Pages
           .Order(order)
           .Build();
 
-          string path = string.Format("http://{0}/videoplayer", HttpContext.Request.Host.Value);
+          string path = string.Format("http://{0}/videoplayer?event={1}", HttpContext.Request.Host.Value, eventName);
 
         // create checkout request with the previously created order
         CreateCheckoutRequest createCheckoutRequest = new CreateCheckoutRequest.Builder(
