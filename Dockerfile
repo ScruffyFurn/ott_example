@@ -51,6 +51,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Make need dir(s)
+RUN mkdir /usr/share/nginx/
 RUN mkdir /usr/share/nginx/html/
 RUN mkdir /usr/share/nginx/html/tv/
 RUN mkdir /usr/share/nginx/html/tv/hls
