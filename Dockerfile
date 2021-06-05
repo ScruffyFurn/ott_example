@@ -50,5 +50,12 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 # Set up config file
 COPY nginx.conf /etc/nginx/nginx.conf
 
+# Make need dir(s)
+RUN mkdir /usr/share/nginx/
+RUN mkdir /usr/share/nginx/html/
+RUN mkdir /usr/share/nginx/html/tv/
+RUN mkdir /usr/share/nginx/html/tv/hls
+
+
 EXPOSE 1935
 CMD ["nginx", "-g", "daemon off;"]
