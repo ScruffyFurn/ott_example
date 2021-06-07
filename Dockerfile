@@ -1,12 +1,10 @@
-FROM buildpack-deps:stretch
+FROM        ubuntu:18.04
 WORKDIR     /tmp/workdir
 
 RUN     apt-get -yqq update && \
         apt-get install -yq --no-install-recommends ca-certificates expat libgomp1 && \
         apt-get autoremove -y && \
         apt-get clean -y
-
-FROM base as build
 
 ENV         FFMPEG_VERSION=4.3.2 \
             AOM_VERSION=v1.0.0 \
@@ -570,7 +568,7 @@ RUN \
         done
 
 
-COPY --from=build /usr/local /usr/local/
+COPY /usr/local /usr/local/
 # Versions of Nginx and nginx-rtmp-module to use
 ENV NGINX_VERSION nginx-1.18.0
 ENV NGINX_RTMP_MODULE_VERSION 1.2.1
