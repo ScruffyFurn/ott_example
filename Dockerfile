@@ -624,6 +624,9 @@ RUN mkdir /usr/share/nginx/html/
 RUN mkdir /usr/share/nginx/html/tv/
 RUN mkdir /usr/share/nginx/html/tv/hls
 
+COPY webplayer_example/index.html /usr/share/nginx/html/
 
 EXPOSE 1935
+EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
