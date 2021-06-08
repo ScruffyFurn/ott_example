@@ -625,6 +625,7 @@ RUN mkdir /usr/share/nginx/html/tv/
 RUN mkdir /usr/share/nginx/html/tv/hls
 
 COPY webplayer_example/index.html /usr/share/nginx/html/
+COPY dynamic.m3u /usr/share/nginx/html/tv/
 
 EXPOSE 1935
 EXPOSE 80
