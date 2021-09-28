@@ -1,0 +1,33 @@
+{
+  "VOD": {
+    "clear": [],
+    "DRMOpen": [],
+    "DRMToken": [],
+    "encryptionOpen": [],
+    "encryptionToken": [],
+    "subtitle": "",
+    "DRMOpenKIDCENC": "",
+    "DRMOpenKIDCBCS": "",
+    "DRMTokenKIDCENC": "",
+    "DRMTokenKIDCBCS": ""
+  },
+  "LiveStream": {
+    "mode": "",
+    "ingestURLs": [],
+    "clear": [],
+    "DRMOpen": [],
+    "DRMToken": [],
+    "encryptionOpen": [],
+    "encryptionToken": [],
+    "DRMOpenKIDCENC": "",
+    "DRMOpenKIDCBCS": "",
+    "DRMTokenKIDCENC": "",
+    "DRMTokenKIDCBCS": ""
+  },
+  "WidevineLicenseURL": "",
+  "PlayReadyLicenseURL": "",
+  "FairPlayLicenseURL": "",
+  "FairPlayPublicCertPath": "",
+  "KeyDeliveryUrl": "",
+  "Token": ""
+}
