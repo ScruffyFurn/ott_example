@@ -35,7 +35,6 @@ namespace SportsClub.Checkout.Pages
       try
       {
         // create line items for the order
-        // This example assumes the order information is retrieved and hard coded
         // You can find different ways to retrieve order information and fill in the following lineItems object.
         List<OrderLineItem> lineItems = new List<OrderLineItem>();
 
